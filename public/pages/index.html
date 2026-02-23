@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Tracker - Dashboard</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+
+  <nav>
+    <h1>Job Tracker</h1>
+    <div class="nav-links">
+      <a href="/pages/index.html" class="active">Dashboard</a>
+      <a href="/pages/applications.html">Applications</a>
+    </div>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Overview</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Total</h3>
+          <p id="total">0</p>
+        </div>
+        <div class="stat-card applied">
+          <h3>Applied</h3>
+          <p id="applied">0</p>
+        </div>
+        <div class="stat-card interview">
+          <h3>Interview</h3>
+          <p id="interview">0</p>
+        </div>
+        <div class="stat-card offer">
+          <h3>Offer</h3>
+          <p id="offer">0</p>
+        </div>
+        <div class="stat-card rejected">
+          <h3>Rejected</h3>
+          <p id="rejected">0</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="applications-section">
+      <h2>Recent Applications</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Date Applied</th>
+            </tr>
+          </thead>
+          <tbody id="applications-container"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div class="modal-header">
+        <h3 id="modal-company"></h3>
+        <p class="modal-role" id="modal-role"></p>
+      </div>
+      <div class="modal-meta">
+        <div class="modal-meta-item">
+          <label>Status</label>
+          <span id="modal-status-badge"></span>
+        </div>
+        <div class="modal-meta-item">
+          <label>Date Applied</label>
+          <span id="modal-date"></span>
+        </div>
+        <div class="modal-meta-item">
+          <label>Deadline</label>
+          <span id="modal-deadline"></span>
+        </div>
+        <div class="modal-meta-item">
+          <label>Job Posting</label>
+          <span id="modal-url"></span>
+        </div>
+      </div>
+      <div class="modal-notes" id="modal-notes-wrapper">
+        <span id="modal-notes"></span>
+      </div>
+      
+    </div>
+  </div>
+  </main>
+
+  <script src="/scripts/api.js"></script>
+  <script src="/scripts/app.js"></script>
+</body>
+</html>
