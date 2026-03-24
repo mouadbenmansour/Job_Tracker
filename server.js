@@ -8,6 +8,10 @@ const path = require('path')
 const app = express()
 const PORT = process.env.PORT || 3001
 
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 app.use(cors({
   origin: 'https://job-tracker-nine-ruby.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],

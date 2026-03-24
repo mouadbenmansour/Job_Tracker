@@ -1,4 +1,4 @@
-const BASE_URL = 'https://jobtracker-production-3aa0.up.railway.app/api/applications'
+const BASE_URL = 'https://jobtracker-production-3aa0.up.railway.app'
 
 async function getApplications() {
   const response = await fetch(`${BASE_URL}/api/applications`)
