@@ -1,13 +1,13 @@
 const BASE_URL = 'https://jobtracker-production-3aa0.up.railway.app/api/applications'
 
 async function getApplications() {
-  const response = await fetch(BASE_URL)
+  const response = await fetch(`${BASE_URL}/api/applications`)
   const data = await response.json()
   return data
 }
 
 async function addApplication(applicationData) {
-  const response = await fetch(`${BASE_URL}/add`, {
+  const response = await fetch(`${BASE_URL}/api/applications/add`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(applicationData)
@@ -17,7 +17,7 @@ async function addApplication(applicationData) {
 }
 
 async function updateApplication(id, applicationData) {
-  const response = await fetch(`${BASE_URL}/${id}`, {
+  const response = await fetch(`${BASE_URL}/api/applications/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(applicationData)
@@ -27,7 +27,7 @@ async function updateApplication(id, applicationData) {
 }
 
 async function deleteApplication(id) {
-  const response = await fetch(`${BASE_URL}/${id}`, {
+  const response = await fetch(`${BASE_URL}/api/applications/${id}`, {
     method: 'DELETE'
   })
   const data = await response.json()
