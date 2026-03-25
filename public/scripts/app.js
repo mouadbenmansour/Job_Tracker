@@ -67,6 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadApplications() {
   const applications = await getApplications()
+
+  if (Array.isArray(data)) {
+    setApplications(data);
+} else {
+    console.error("Received non-array data:", data);
+    setApplications([]); // Fallback to empty array so .filter() doesn't crash
+}
   const container = document.getElementById('applications-container')
   if (!container) return
 
